@@ -1,0 +1,29 @@
+{
+  "name": "graphql-news-app",
+  "version": "1.0.0",
+  "description": "Serverless news app using AWS resources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "http",
+    "url": "https://github.com/krlozadan/graphql-news-app.git"
+  },
+  "keywords": [
+    "news",
+    "app",
+    "graphql",
+    "aws",
+    "lambda",
+    "serverless",
+    "cognito",
+    "dynamodb"
+  ],
+  "author": "Carlos Adan Cortes De la Fuente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krlozadan/graphql-news-app/issues"
+  },
+  "homepage": "https://github.com/krlozadan/graphql-news-app#readme"
+}
