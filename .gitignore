@@ -1,0 +1,12 @@
+.vscode
+.serverless
+node_modules
+
+static/aws-sdks/
+static/css/bootstrap-3.3.7.min.css
+static/css/bootstrap-theme-3.3.7.min.css
+static/js/bootstrap-3.3.7.min.js
+static/js/jquery-1.12.4.min.js
+
+# System
+.DS_Store

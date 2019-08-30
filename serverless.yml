@@ -1,0 +1,25 @@
+service: graphql-news-app
+
+custom:
+  stage: ${opt:stage, ${self:provider.stage}, "dev"}
+
+provider:
+  name: aws
+  region: ca-central-1
+  runtime: nodejs10.x
+
+functions:
+
+resources:
+  Outputs:
+    WebSiteUrl:
+      Value: {"Fn::GetAtt": [WebSite, WebsiteURL]}
+    WebSiteBucket:
+      Value: {Ref: WebSite}
+  Resources:
+    WebSite:
+      Type: "AWS::S3::Bucket"
+      Properties:
+        WebsiteConfiguration:
+          ErrorDocument: index.html
+          IndexDocument: index.html

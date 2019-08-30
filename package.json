@@ -4,6 +4,7 @@
   "description": "Serverless news app using AWS resources",
   "main": "index.js",
   "scripts": {
+    "deploy": "sls deploy --stage dev --aws-profile krlozadan",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/krlozadan/graphql-news-app/issues"
   },
-  "homepage": "https://github.com/krlozadan/graphql-news-app#readme"
+  "homepage": "https://github.com/krlozadan/graphql-news-app#readme",
+  "devDependencies": {
+    "serverless": "^1.51.0"
+  }
 }
