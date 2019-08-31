@@ -15,9 +15,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li class="authenticated"><a href="/">My Posts</a></li>
-                <li class="authenticated"><a href="/test.html">Debug</a></li>
+                <li class="active authenticated"><a href="/test.html">Debug</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Greet the user by name, if they're logged in -->
@@ -62,7 +62,18 @@
         </div><!-- /.container-fluid -->
         </nav>
         <div class="container" role="main">
-        <h1>Hello Serverless Fans!</h1>
+        <h1>Testing Cognito Sign-In</h1>
+        <div>
+            <form class="authenticated col-md-4" id="features" action="">
+            <p><button type="button" id="buttonGet" class="btn btn-default">Test Endpoint</button></p>
+            <p><button type="button" id="buttonListArticles" class="btn btn-info">Get Article List</button></p>
+            <p><button type="button" id="buttonCreateArticle" class="btn btn-warning">New Article</button></p>
+            </form>
+            <div class="col-md-8">
+            <h4>Results of Last Request</h4>
+            <div><pre><code id="output"></code></pre></div>
+            </div>
+        </div>
         </div>
         <script src="./js/jquery-1.12.4.min.js"></script>
         <script src="./js/bootstrap-3.3.7.min.js"></script>
@@ -70,6 +81,9 @@
         <script src="./aws-sdks/amazon-cognito-identity.v1.16.0.min.js"></script>
         <script src="./js/cognito-utils.js"></script>
         <script src="./js/config.js"></script>
+        <script src="./js/gql.js"></script>
         <script src="./js/login.js"></script>
+        <script src="./js/test.js"></script>
+        <script>testPage()</script>
     </body>
 </html>
