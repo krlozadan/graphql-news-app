@@ -1,21 +1,32 @@
 service: graphql-news-app
 
 custom:
-  stage: ${opt:stage, ${self:provider.stage}, "dev"}
+  stage: ${opt:stage, self:provider.stage}
 
 provider:
   name: aws
   region: ca-central-1
   runtime: nodejs10.x
+  apiName: graphql-news-app-${self:custom.stage}
+  logRetentionInDays: 1
+  versionFunctions: false
 
 functions:
+  presign:
+    handler: backend/pre_signup.handler
+  test:
+    handler: backend/test_auth.handler
+    events:
+    - http:
+        cors: true
+        authorizer:
+          name: pool_auth
+          arn: arn:aws:cognito-idp:ca-central-1:197238522960:userpool/ca-central-1_SjkjYfhYL
+        path: /test
+        method: get
 
 resources:
-  Outputs:
-    WebSiteUrl:
-      Value: {"Fn::GetAtt": [WebSite, WebsiteURL]}
-    WebSiteBucket:
-      Value: {Ref: WebSite}
+  Outputs: ${file(resources/outputs.yml)}
   Resources:
     WebSite:
       Type: "AWS::S3::Bucket"

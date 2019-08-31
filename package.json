@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "sls deploy --stage dev --aws-profile krlozadan",
+    "package": "sls package --stage dev --aws-profile krlozadan",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
